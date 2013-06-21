@@ -1,1 +1,25 @@
-<p>test</p>
+<!doctype html>
+<html>
+  <head>
+    {{#if product.image}}
+      <meta name="twitter:card" content="product">
+      <meta name="twitter:site" content="@goodybagATX">
+      {{#if product.business.twitter}}
+        <meta name="twitter:creator" content="{{product.business.twitter}}">
+      {{/if}}
+      <meta name="twitter:title"        content="{{product.name}}">
+      <meta name="twitter:description"  content="{{product.description}}">
+      <meta name="twitter:image"        content="{{product.image.url}}">
+      <meta name="twitter:image:width"  content="{{product.image.width}}">
+      <meta name="twitter:image:height" content="{{product.image.height}}">
+      <meta name="twitter:label1"       content="Business">
+      <meta name="twitter:data1"        content="{{product.business.name}}">
+      {{#if product.price}}
+        <meta name="twitter:label2"       content="Price">
+        <meta name="twitter:data2"        content="{{product.price}}">
+      {{/if}}
+    {{/if}}
+  </head>
+  <body>
+  </body>
+</html>

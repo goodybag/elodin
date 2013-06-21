@@ -3,14 +3,20 @@ var logger = require('winston');
 var configs = {
   dev: {
     port: 8081,
-    apiRoot: 'http://localhost:8080',
-    apiVersion: 'v1'
+    apiRoot: 'http://localhost:3000',
+    apiVersion: 'v1',
+    fb: {
+      appId: '511559232240117'
+    }
   },
 
   prod: {
     port: 80,
     apiRoot: 'https://magic.goodybag.com',
-    apiVersion: 'v1'
+    apiVersion: 'v1',
+    fb: {
+      appId: '511559232240117'
+    }
   }
 };
 
