@@ -1,1 +1,5 @@
-module.exports.product = require('./product');
+global.Handlebars = require('handlebars');
+
+require('./product');
+
+module.exports = Handlebars.templates;
