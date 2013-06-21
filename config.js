@@ -1,3 +1,5 @@
+var logger = require('winston');
+
 var configs = {
   dev: {
     port: 8081
@@ -10,7 +12,6 @@ var configs = {
 
 var environment = require('./environment');
 
-console.log('mode:', environment.mode);
-console.log('config:', configs[environment.mode]);
+logger.info('using config: ' + environment.mode);
 
 module.exports = configs[environment.mode];
