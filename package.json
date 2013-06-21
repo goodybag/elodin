@@ -1,0 +1,25 @@
+{
+  "name": "elodin",
+  "version": "0.0.0",
+  "author": "Goodybag <support@goodybag.com>",
+  "description": "server generated web pages, for permalinking and scrapers",
+  "contributors": [
+    {
+      "name": "Geoffrey Parker",
+      "email": "grp@gparker.co"
+    }
+  ],
+  "scripts": {
+    "start": "node ./main.js"
+  },
+  "main": "./server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:goodybag/elodin.git",
+  },
+  "dependencies": {
+  },
+  "engines": {
+    "node": "0.10.5"
+  }
+}
