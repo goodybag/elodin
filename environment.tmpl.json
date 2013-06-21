@@ -1,3 +1,4 @@
 {
-  "mode": "dev" // or "prod"
+  // "mode": "dev"
+  "mode": "prod"
 }
