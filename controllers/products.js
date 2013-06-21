@@ -28,7 +28,7 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
           twitter: product.businessTwitter
         },
         image: {
-          url: product.photoUrl + '/convert?fit=clip&w=320&h=320',
+          url: product.photoUrl + '/convert?fit=clip&w=320&h=320', //TODO: switch to using hb filepicker helper
           width: 320,
           height: 320
         },
