@@ -16,3 +16,4 @@ npm-debug.log
 node_modules/
 environment.json
 views/*/index.js
+.DS_Store

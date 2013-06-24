@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/main.css" rel="stylesheet">
     {{#if product.image.url}}
       <!-- Twitter Card Integration -->
       <meta name="twitter:card" content="product">
@@ -23,7 +24,7 @@
     {{/if}}
   </head>
   <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-inverse">
       <div class="navbar-inner">
         <a class="brand" href="http://goodybag.com">Goodybag</a>
       </div>
@@ -33,22 +34,25 @@
         <h1 class="span6 offset3">{{product.name}}</h1>
       </div>
       <div class="row">
-        <h2 class="span6 offset3">@ {{product.business.name}}</h2>
+        <h4 class="span6 offset3">@ {{product.business.name}}</h4>
       </div>
-      <div class="row">
-        <img class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
+      <div id="main-image-wrapper" class="row">
+        <img id="main-image" class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
       </div>
       <div class="row">
         <p class="span6 offset3">{{product.description}}</p>
       </div>
       <div class="row">
         {{#if product.cents}}
-          <div class="span3 offset3">Price: {{price product.cents}}</div>
-          <div class="span3">Likes: {{product.likes}}</div>
-        {{else}}
-          <div class="span2 offset5">Likes: {{product.likes}}</div>
+          <div class="span3 offset3">{{price product.cents}}</div>
         {{/if}}
+        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">{{product.likes}}</div>
       </div>
     </div>
+    <script>
+      document.getElementById('main').onclick = function(e) {
+        window.location.href = 'http://www.goodybag.com/#/businesses/{{product.business.id}}';
+      }
+    </script>
   </body>
 </html>

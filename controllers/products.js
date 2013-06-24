@@ -22,6 +22,7 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
         name: product.name || "",
         description: product.description || "",
         business: {
+          id: product.businessId,
           name: product.businessName,
           twitter: product.businessTwitter
         },
