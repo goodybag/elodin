@@ -30,9 +30,12 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
           width: 320,
           height: 320
         },
-        price: product.price != null ? '$' + product.price / 100 : null
+        cents: product.price,
+        likes: product.likes
       }
     };
+
+    // logger.info('rendering product with data: ' + JSON.stringify(data));
 
     res.send(view(data));
   });

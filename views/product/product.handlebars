@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
   <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     {{#if product.image.url}}
+      <!-- Twitter Card Integration -->
       <meta name="twitter:card" content="product">
       <meta name="twitter:site" content="@goodybagATX">
       {{#if product.business.twitter}}
@@ -14,12 +16,39 @@
       <meta name="twitter:image:height" content="{{product.image.height}}">
       <meta name="twitter:label1"       content="Business">
       <meta name="twitter:data1"        content="{{product.business.name}}">
-      {{#if product.price}}
+      {{#if product.cents}}
         <meta name="twitter:label2"       content="Price">
-        <meta name="twitter:data2"        content="{{product.price}}">
+        <meta name="twitter:data2"        content="{{price product.cents}}">
       {{/if}}
     {{/if}}
   </head>
   <body>
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="http://goodybag.com">Goodybag</a>
+      </div>
+    </nav>
+    <div id="main" class="container well" style="text-align: center;">
+      <div class="row">
+        <h1 class="span6 offset3">{{product.name}}</h1>
+      </div>
+      <div class="row">
+        <h2 class="span6 offset3">@ {{product.business.name}}</h2>
+      </div>
+      <div class="row">
+        <img class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
+      </div>
+      <div class="row">
+        <p class="span6 offset3">{{product.description}}</p>
+      </div>
+      <div class="row">
+        {{#if product.cents}}
+          <div class="span3 offset3">Price: {{price product.cents}}</div>
+          <div class="span3">Likes: {{product.likes}}</div>
+        {{else}}
+          <div class="span2 offset5">Likes: {{product.likes}}</div>
+        {{/if}}
+      </div>
+    </div>
   </body>
 </html>

@@ -11,4 +11,9 @@ module.exports.register = function(Handlebars) {
 
     return result;
   });
+
+  Handlebars.registerHelper('price', function(cents) {
+    if (typeof cents !== 'number') return null;
+    return '$' + Math.round(cents) / 100;
+  });
 };
