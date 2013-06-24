@@ -34,7 +34,7 @@
         <h1 class="span6 offset3">{{product.name}}</h1>
       </div>
       <div class="row">
-        <h4 class="span6 offset3">@ {{product.business.name}}</h4>
+        <h4 class="span6 offset3 business-name">@ {{product.business.name}}</h4>
       </div>
       <div id="main-image-wrapper" class="row">
         <img id="main-image" class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
@@ -42,11 +42,11 @@
       <div class="row">
         <p class="span6 offset3">{{product.description}}</p>
       </div>
-      <div class="row">
+      <div class="row info-row">
         {{#if product.cents}}
           <div class="span3 offset3">{{price product.cents}}</div>
         {{/if}}
-        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">{{product.likes}}</div>
+        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">[heart icon] {{product.likes}}</div>
       </div>
     </div>
     <script>
