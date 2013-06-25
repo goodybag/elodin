@@ -1,3 +1,11 @@
+body {
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#main {
+  cursor: pointer;
+}
+
 nav.navbar div.navbar-inner{
   height:60px;
 }
@@ -10,6 +18,10 @@ nav.navbar div.navbar-inner a.brand {
   padding-top: 4px;
 }
 
+h1.product-name, h4.business-name {
+  font-weight: 600;
+}
+
 #main-image {
   border-radius: 6px;
 }
@@ -17,6 +29,10 @@ nav.navbar div.navbar-inner a.brand {
 #main-image-wrapper {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 16px;
 }
 
 .info-row {

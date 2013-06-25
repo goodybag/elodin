@@ -3,6 +3,8 @@
   <head>
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
+
+    <title>{{product.name}}</title>
     {{#if product.image.url}}
       <!-- Twitter Card Integration -->
       <meta name="twitter:card" content="product">
@@ -39,7 +41,7 @@
     </nav>
     <div id="main" class="container well" style="text-align: center;">
       <div class="row">
-        <h1 class="span6 offset3">{{product.name}}</h1>
+        <h1 class="span6 offset3 product-name">{{product.name}}</h1>
       </div>
       <div class="row">
         <h4 class="span6 offset3 business-name">@ {{product.business.name}}</h4>
@@ -48,22 +50,24 @@
         <img id="main-image" class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
       </div>
       <div class="row">
-        <p class="span6 offset3">{{product.description}}</p>
+        <p class="span6 offset3 product-description">{{product.description}}</p>
       </div>
       <div class="row info-row">
         {{#if product.cents}}
           <div class="span3 offset3">{{price product.cents}}</div>
         {{/if}}
         <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">
-          <img src="/heart_icon.png" height="20" width="20"> {{product.likes}}
+          <img src="/heart_icon.png" height="16" width="16"> {{product.likes}}
         </div>
       </div>
     </div>
+    <script src="//use.typekit.net/vhr1yyf.js"></script>
     <script>
       // Don't really need any jquery yet
       document.getElementById('main').onclick = function(e) {
         window.location.href = 'http://www.goodybag.com/#/businesses/{{product.business.id}}';
       }
+      try{Typekit.load();}catch(e){}
     </script>
   </body>
 </html>
