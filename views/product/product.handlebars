@@ -26,7 +26,15 @@
   <body>
     <nav class="navbar navbar-inverse">
       <div class="navbar-inner">
-        <a class="brand" href="http://goodybag.com">Goodybag</a>
+        <div class="container navbar-contents-wrapper">
+          <a class="brand" href="http://goodybag.com">
+            <img src="/logo.png" width="130" height="71">
+          </a>
+          <ul class="nav">
+            <li><a href="http://www.goodybag.com/#/explore">Explore</a></li>
+            <li><a href="http://www.goodybag.com/#/collections">My Collections</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div id="main" class="container well" style="text-align: center;">
@@ -46,10 +54,13 @@
         {{#if product.cents}}
           <div class="span3 offset3">{{price product.cents}}</div>
         {{/if}}
-        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">[heart icon] {{product.likes}}</div>
+        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">
+          <img src="/heart_icon.png" height="20" width="20"> {{product.likes}}
+        </div>
       </div>
     </div>
     <script>
+      // Don't really need any jquery yet
       document.getElementById('main').onclick = function(e) {
         window.location.href = 'http://www.goodybag.com/#/businesses/{{product.business.id}}';
       }

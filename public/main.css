@@ -1,3 +1,15 @@
+nav.navbar div.navbar-inner{
+  height:60px;
+}
+
+.navbar .navbar-inner .navbar-contents-wrapper {
+  width: 940px;
+}
+
+nav.navbar div.navbar-inner a.brand {
+  padding-top: 4px;
+}
+
 #main-image {
   border-radius: 6px;
 }
