@@ -14,7 +14,12 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
     if (err) return res.json(500, err);
     if (response.statusCode !== 200) res.send(response.statusCode, body); //TODO: better
 
-    var product = JSON.parse(body).data;
+    var product;
+    try {
+      product = JSON.parse(body).data;
+    } catch(e) {
+      return res.json(500, {error: {message: 'Could not parse response from api.', details:body}});
+    }
 
     var data = {
       fb: config.fb,
