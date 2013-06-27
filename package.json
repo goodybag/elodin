@@ -10,7 +10,7 @@
     }
   ],
   "scripts": {
-    "prestart": "find views -name *handlebars | xargs -I {} echo node_modules/.bin/handlebars {} -f {} | sed 's/\\(.*\\)\\/.*\\.handlebars/\\1\\/index.js/g' | sh",
+    "prestart": "make",
     "start": "node ./main.js"
   },
   "main": "./server.js",

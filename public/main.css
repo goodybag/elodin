@@ -1,9 +1,6 @@
-body {
-  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
 #main {
   cursor: pointer;
+  text-align: center;
 }
 
 nav.navbar div.navbar-inner{
@@ -18,8 +15,9 @@ nav.navbar div.navbar-inner a.brand {
   padding-top: 4px;
 }
 
-h1.product-name, h4.business-name {
-  font-weight: 600;
+.navbar a {
+  font-size: 19px;
+  font-weight: 100;
 }
 
 #main-image {
@@ -31,10 +29,6 @@ h1.product-name, h4.business-name {
   margin-bottom: 10px;
 }
 
-.product-description {
-  font-size: 16px;
-}
-
 .info-row {
   color: #999999;
 }
@@ -42,4 +36,20 @@ h1.product-name, h4.business-name {
 .business-name {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.dropdown-menu {
+  background: #404040;
+  text-align: center;
+  border-radius: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 0;
+  border-bottom: none;
+  border-top: solid #3d3d3d 1px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
 }
