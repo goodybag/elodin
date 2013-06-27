@@ -17,3 +17,4 @@ node_modules/
 environment.json
 views/*/index.js
 .DS_Store
+public/bootstrap.css
