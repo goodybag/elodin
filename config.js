@@ -12,7 +12,7 @@ var configs = {
 
   prod: {
     port: process.env.PORT || 80,
-    apiRoot: 'https://magic.goodybag.com',
+    apiRoot: 'http://magic.goodybag.com',
     apiVersion: 'v1',
     fb: {
       appId: '511559232240117'

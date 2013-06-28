@@ -10,14 +10,19 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
 
   var path = '/' + config.apiVersion + '/products/' + pid;
 
+  logger.info('requesting product: ' + config.apiRoot + path);
   request.get(config.apiRoot + path, function(err, response, body) {
-    if (err) return res.json(500, err);
+    if (err) {
+      logger.error(err);
+      return res.json(500, err);
+    }
     if (response.statusCode !== 200) res.send(response.statusCode, body); //TODO: better
 
     var product;
     try {
       product = JSON.parse(body).data;
     } catch(e) {
+      logger.error('parse error: ' + body);
       return res.json(500, {error: {message: 'Could not parse response from api.', details:body}});
     }
 
