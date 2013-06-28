@@ -11,7 +11,7 @@ var configs = {
   },
 
   prod: {
-    port: 80,
+    port: process.env.PORT || 80,
     apiRoot: 'https://magic.goodybag.com',
     apiVersion: 'v1',
     fb: {
