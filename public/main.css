@@ -1,9 +1,6 @@
 body {
   font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
-
-#main {
-  cursor: pointer;
+  padding-top: 1px; /* Prevent margin collapse */
 }
 
 nav.navbar div.navbar-inner{
@@ -16,6 +13,16 @@ nav.navbar div.navbar-inner{
 
 nav.navbar div.navbar-inner a.brand {
   padding-top: 4px;
+}
+
+#main {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.centered-container {
+  margin-left: 310px;
 }
 
 h1.product-name, h4.business-name {
@@ -40,6 +47,5 @@ h1.product-name, h4.business-name {
 }
 
 .business-name {
-  margin-top: 0;
   margin-bottom: 0;
 }

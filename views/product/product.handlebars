@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/goodybag.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
 
     <title>{{product.name}}</title>
@@ -26,38 +27,60 @@
     {{/if}}
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container navbar-contents-wrapper">
-          <a class="brand" href="http://goodybag.com">
-            <img src="/logo.png" width="130" height="71">
-          </a>
-          <ul class="nav">
-            <li><a href="http://www.goodybag.com/#/explore">Explore</a></li>
-            <li><a href="http://www.goodybag.com/#/collections">My Collections</a></li>
-          </ul>
+    <div id="app-header" class="header-navbar">
+      <div class="container">
+        <div class="row">
+          <div class="span2 logo-wrapper">
+            <img src="/logo.png" alt="" class="logo">
+          </div>
+
+          <div class="span6 nav-wrapper">
+            <ul class="nav">
+              <li><a href="//goodybag.com/#/explore">Explore</a></li>
+              <li><a href="//goodybag.com///goodybag.com/#/collections">My Collections</a></li>
+              <li class="dropdown dropdown-more">
+                <a href="#/more" class="more">More</a>
+                <ul class="dropdown-menu">
+                  <li><a href="//goodybag.com/#/how-it-works">How it Works</a></li>
+                  <li><a href="//goodybag.com/#/locations">Locations</a></li>
+                  <li><a href="//goodybag.com/#/about-us">About Us</a></li>
+                  <li><a href="//goodybag.com/#/charities">Charities</a></li>
+                  <li><a href="//goodybag.com/#/gb-for-businesses">Contact Us</a></li>
+                  <li><a href="//goodybag.com/#/privacy">Privacy</a></li>
+                  <li><a href="//goodybag.com/#/legal">Legal</a></li>
+                  <li><a href="//goodybag.com/#/support">Support</a></li>
+                  <li class="get-the-app">
+                    <a href="https://itunes.apple.com/ie/app/goodybag/id506924389?mt=8">Get the App!</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </nav>
-    <div id="main" class="container well" style="text-align: center;">
-      <div class="row">
-        <h1 class="span6 offset3 product-name">{{product.name}}</h1>
-      </div>
-      <div class="row">
-        <h4 class="span6 offset3 business-name">@ {{product.business.name}}</h4>
-      </div>
-      <div id="main-image-wrapper" class="row">
-        <img id="main-image" class="span6 offset3" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
-      </div>
-      <div class="row">
-        <p class="span6 offset3 product-description">{{product.description}}</p>
-      </div>
-      <div class="row info-row">
-        {{#if product.cents}}
-          <div class="span3 offset3">{{price product.cents}}</div>
-        {{/if}}
-        <div class="span{{#if product.cents}}3{{else}}2 offset5{{/if}}">
-          <img src="/heart_icon.png" height="16" width="16"> {{product.likes}}
+    </div>
+    <div id="main" class="container plateau">
+      <div style="clear: both;"></div>
+      <div class="span5 centered-container">
+        <div class="row-fluid">
+          <h1 class="span12 product-name">{{product.name}}</h1>
+        </div>
+        <div class="row-fluid">
+          <h4 class="span12 business-name">@ {{product.business.name}}</h4>
+        </div>
+        <div id="main-image-wrapper" class="row-fluid">
+          <img id="main-image" class="span12" src="{{filepicker product.image.url 570 570}}" height="570" width="570">
+        </div>
+        <div class="row-fluid">
+          <p class="span12 product-description">{{product.description}}</p>
+        </div>
+        <div class="row-fluid info-row">
+          {{#if product.cents}}
+            <div class="span6">{{price product.cents}}</div>
+          {{/if}}
+            <div class="span{{#if product.cents}}6{{else}}12{{/if}}">
+              <img src="/heart_icon.png" height="16" width="16"> {{product.likes}}
+            </div>
         </div>
       </div>
     </div>
