@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
   <head>
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/goodybag.css" rel="stylesheet">
@@ -25,6 +25,10 @@
         <meta name="twitter:data2"        content="{{price product.cents}}">
       {{/if}}
     {{/if}}
+      <meta property="og:image" content="{{filepicker product.image.url product.image.width product.image.height}}" />
+    <script>
+      window.location.href = "http://www.goodybag.com/#/products/{{product.id}}";
+    </script>
   </head>
   <body>
     <div id="app-header" class="header-navbar">
