@@ -22,7 +22,8 @@
     "express": "3.2.x",
     "winston": "0.7.x",
     "request": "2.21.x",
-    "node-static": "0.6.x"
+    "node-static": "0.6.x",
+    "handlebars": "1.0.x"
   },
   "devDependencies": {
     "handlebars": "1.0.x"
