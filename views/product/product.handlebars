@@ -1,6 +1,6 @@
 <!doctype html>
 <html xmlns:fb="http://ogp.me/ns/fb#">
-  <head>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# restaurant: http://ogp.me/ns/restaurant#">
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/goodybag.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
@@ -25,7 +25,13 @@
         <meta name="twitter:data2"        content="{{price product.cents}}">
       {{/if}}
     {{/if}}
-      <meta property="og:image" content="{{filepicker product.image.url product.image.width product.image.height}}" />
+
+      <meta property="fb:app_id"          content="1234567890" />
+      <meta property="og:type"            content="restaurant.menu_item" />
+      <meta property="og:url"             content="http://www.goodybag.com/#/products/{{product.id}}" />
+      <meta property="og:title"           content="{{product.name}}" />
+      <meta property="og:description"     content="{{product.description}}">
+      <meta property="og:image"           content="{{filepicker product.image.url product.image.width product.image.height}}" />
     <script>
       window.location.href = "http://www.goodybag.com/#/products/{{product.id}}";
     </script>
