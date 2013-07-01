@@ -6,6 +6,9 @@ var config  = require('../config');
 var view    = require('../views').product;
 
 var getProduct = module.exports.getProduct = function(req, res, next) {
+  var redirect = false; //redirect to javascript app instead of simple page
+  if (req.headers['user-agent'].toLowerCase().indexOf('twitter') > -1) redirect = true;
+
   var pid = req.params.productId;
 
   var path = '/' + config.apiVersion + '/products/' + pid;
@@ -43,7 +46,8 @@ var getProduct = module.exports.getProduct = function(req, res, next) {
           height: 320
         },
         cents: product.price,
-        likes: product.likes
+        likes: product.likes,
+        redirect: redirect
       }
     };
 

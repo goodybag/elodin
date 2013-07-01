@@ -1,6 +1,12 @@
 <!doctype html>
 <html xmlns:fb="http://ogp.me/ns/fb#">
   <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# restaurant: http://ogp.me/ns/restaurant#">
+    {{#unless redirect}}
+      <script>
+        window.location.replace("http://www.goodybag.com/#/explore/products/{{product.id}}");
+      </script>
+    {{/unless}}
+
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/goodybag.css" rel="stylesheet">
     <link href="/main.css" rel="stylesheet">
@@ -32,9 +38,6 @@
       <meta property="og:title"           content="{{product.name}}" />
       <meta property="og:description"     content="{{product.description}}">
       <meta property="og:image"           content="{{filepicker product.image.url product.image.width product.image.height}}" />
-    <script>
-      window.location.href = "http://www.goodybag.com/#/explore/products/{{product.id}}";
-    </script>
   </head>
   <body>
     <div id="app-header" class="header-navbar">
@@ -98,7 +101,7 @@
     <script>
       // Don't really need any jquery yet
       document.getElementById('main').onclick = function(e) {
-        window.location.href = 'http://www.goodybag.com/#/businesses/{{product.business.id}}';
+        window.location.replace('http://www.goodybag.com/#/businesses/{{product.business.id}}');
       }
       try{Typekit.load();}catch(e){}
     </script>
