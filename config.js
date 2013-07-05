@@ -22,6 +22,6 @@ var configs = {
 
 var environment = require('./environment');
 
-logger.info('using config: ' + environment.mode);
+logger.info('using config: ' + (process.env.GB_ELODIN_ENV || environment.mode));
 
-module.exports = configs[environment.mode];
+module.exports = configs[process.env.GB_ELODIN_ENV || environment.mode];
